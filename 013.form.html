@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Umfrage_TK3</title>
+        <link rel="stylesheet" type="text/css" href="css/1.css">
+    </head>
+    <body>
+        <!--Data Form als url?name=value&name=value&name=value-->
+        <form action="http://localhost:77/crm/umfrage">
+            Singel Choice <br>
+            <input type="radio" name="umfrage1" value="a" />A: Beton <br>
+            <input type="radio" name="umfrage1" value="b" />B: Holz <br>
+            <input type="radio" name="umfrage1" value="c" />C: Stein <br>
+            <input type="radio" name="umfrage1" value="d" />D: Plastic <br>
+
+            <br><BR>            
+            Multiple Choice <br>
+            <input type="checkbox" name="umfrage2" value="A" />A: Beton <br>
+            <input type="checkbox" name="umfrage2" value="B" />B: Holz <br>
+            <input type="checkbox" name="umfrage2" value="C" />C: Stein <br>
+            <input type="checkbox" name="umfrage2" value="D" />D: Plastic <br>
+
+            <script>
+                var k = NaN;
+                console.log(typeof k);
+
+                var result = 100 / "cute";
+                console.log(result);
+
+                //string//
+                var kai1 = "bear";
+                console.log(typeof kai1);
+
+                //sollte "Object" sein aber hier fehler gibt//
+                var kai2 = bear ("newbear");
+                console.log(typeof kai2);
+
+                var o = new Object();
+                console.log(typeof o);
+
+                Object.prototype.pretty = function(){
+                    console.log("how pretty!")
+                }
+                
+                //diaoyong
+                o.pretty()
+
+
+                //
+            </script>
+
+            <br><BR>
+                <!-- bei type="button" können die Data nicht absenden-->            
+            Multiple Choice <br>
+            <input type="button" name="umfrage3" value="A" onclick="window.alert('hello kitty');" />A: Beton <br>
+            <input type="button" name="umfrage3" value="B" />B: Holz <br>
+            <input type="button" name="umfrage3" value="C" />C: Stein <br>
+            <input type="button" name="umfrage3" value="D" />D: Plastic <br>
+
+            <br>
+            <input type="submit">
+            <br>
+
+            <div id="root"></div>
+            <script src="index.js">
+
+            </script>
+
+        </form>
+    </body>
+</html>

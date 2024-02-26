@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JS中获取元素的三种方式</title>
+    </head>
+
+    <body>
+
+        <div id="Add"></div>
+        <div id="Ada"></div>
+
+        <input type="checkbox" name="ivl" value="1"/>
+        <input type="checkbox" name="ivl" value="2"/>
+        <input type="checkbox" name="ivl" value="3"/>
+        <input type="checkbox" name="ivl" value="4"/>
+
+        <script type="text/javascript">
+            //这是JS中非常经典的获取元素的三种方式
+            //根据id获取一个元素
+            var Add = document.getElementById("Add");
+            console.log(Add)
+
+            //根据name获取多个元素
+            var ivls = document.getElementsByName("ivl");
+            console.log(ivls)
+
+            //根据标签名字获取
+            var divs = document.getElementsByTagName("div")
+            console.log(divs)
+
+
+        </script>
+    </body>
+</html>

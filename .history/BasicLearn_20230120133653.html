@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dududududu</title>
+        <link rel="stylesheet" type="text/css" href="css/1.css">
+    </head>
+
+    <body>
+        <script>
+         var k = NaN;
+         console.log(typeof k);
+
+         var result = 100 / "cute";
+         console.log(result);
+
+         //prototype 属性演示//
+         var o = new Object();
+         console.log(typeof o);
+
+         Object.prototype.pretty = function(){
+            console.log("how pretty!")
+         }
+                
+         //diaoyong//
+         o.pretty()
+
+
+         //给string扩展方法//
+         //给string类型的对象扩张一个mysubstr的方法
+        
+         String.prototype.mysubstr = function(startIndex, length){
+            //this表示当前字符串对象
+            return this.substr(startIndex, length);
+         }
+
+        console.log("gaoxiyu".mysubstr(2,3))
+
+        //正式定义一个员工类
+        function Emp(x,y,z){
+            //属性
+            this.empno = x;
+            this.ename = y;
+            this.brith = z;
+            //方法
+            this.dance = function(){
+                console.log(this.ename + " is dancing~~~OvO")
+            }
+        }
+
+        //创建对象
+        var e = new Emp();
+        e.dance();
+
+        var e2 = new Emp(111);
+        e2.dance();
+
+        var e3 = new Emp(2222, "Kyosuke");
+        e3.dance();
+
+        var e4 = new Emp (3333, "Suga", 122);
+        e4.dance();
+       
+        </script>
+
+
+        <!--注册事件的第一种方式：标签中使用"事件句柄"，事件句柄后编写JS代码
+        当这个事件句柄对应的事件发生后，“注册”在事件句柄当中的这个代码被监听器调用
+
+        onclick鼠标单击的事件句柄，只有当鼠标单击事件click发生后，注册在onclick后面的代码才会被执行。
+
+        以下是button标签中sayhello()函数，在页面打开的时候不会执行
+        只有在页面打开的过程中完成事件的绑定，完成事件的注册，以后只有
+        当该事件发生之后sayhello（）函数才会执行，像这种函数有一种特殊的称谓：回调函数 （callback function）
+
+        回调函数特点：监听器负责调用，程序员不负责调用。
+        当事件发生之后，监听器会负责调用该函数。
+    -->
+        <input type = "button" value="click" onclick="console.log('danji')"/>
+
+        <!--第二种方式-->
+        <input type = "button" value="hello" id="hellobtn" onclick=""/>
+
+        <script type="text/javascript">
+
+            /*定义一个函数*/ 
+            function sum(){
+                console.log("sum function invoke!")
+            }
+
+            /*根据id获取button对象*/
+            var hellobtnElt = document.getElementById("hellobtn");
+
+            //元素中有什么属性，就能“点”什么
+            /* 这行代码在页面打开的时候会执行，执行的意义是：将sum这个回调函数绑定到hellobtn的click事件上*/
+            /*wann lauft 回调函数sum? click事件发生后才会被监听器调用！*/
+            hellobtnElt.onclick = sum
+
+
+            //point! load事件发生后，后面的“匿名回调函数”会被监听器调用！即on事件发生后，function再执行 （适用于all事件） like:
+
+            xxElt.onclick = function(){}
+            xxElt.onblur = function(){
+                console.log("hey boy!")
+            }
+              
+
+        </script>
+    </body>
+</html>

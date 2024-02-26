@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>帅哥警察div和笨蛋帅哥span</title>
+        <style type="text/css">
+            #div1 {
+                background-color: fuchsia;
+                border: 5px solid #febdf8;
+                width: 200px;
+                height:50px;
+            }
+            #span1 {
+                background-color: #febdf8;
+                border: 1px solid fuchsia;
+                width: 200px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            window.onload = function(){
+                document.getElementById("btn").onclick = function(){
+                    //设置div内容
+                    var divElt = document.getElementById("div1");
+                    //通过元素的innerHTML属性设置内部的内容
+                    //innerHTML是属性，不是方法
+                    //innerHTML属性将后面的字符串当作一段HTML代码解释并执行！
+                    divElt.innerHTML ="<font color = '#89CFF0'>高析羽</font>";
+
+                    //innerText auch 元素中的内容
+                    //innerText 后面的字符串即使是一个HTML代码，也不会当作HTML执行，只是看作普通文本（Unterscheid von innerHTML）
+                    //divElt.innerText ="<font color = '#89CFF0'>高析羽</font>";
+
+                }
+
+                var spanbtn = document.getElementById("spanbtn");
+                spanbtn.onclick = function(){
+                    var span1 = document.getElementById("span1");
+                    span1.innerHTML="<a href='https://colors-picker.com/hex-color-picker/'>渣男</a>";
+
+                }
+            }
+        </script>
+
+        <input type="button" id="btn" value="帅哥警察"/>
+        <input type="button" id="spanbtn" value="笨蛋帅哥"/>
+
+        <!--div独占一行！-->
+        <div id="div1"></div>
+
+        <!--span的大小会随着span中的内容多少而变化-->
+        <span id="span1"></span>
+    </body>
+</html>

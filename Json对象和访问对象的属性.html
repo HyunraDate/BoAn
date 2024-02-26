@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Json对象创建&使用</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+         /*
+         1 、What is Json (Javascript object notation) JavaScript标记对象是一种轻量级数据交换格式。
+         
+         What is 轻量级：体积小但数据maybe很多。
+         
+         What is 数据交换：
+         C语言和Java语言之间交换数据。
+         python和Java语言之间交换数据。
+         JavaScript和Java语言之间交换数据。
+
+         开发中两种数据交换：
+         Json>体积小，解析难度小。
+         XML>体积大，解析难度大。（most 于金钱相关 like wechat pay）
+
+        2 、在JavaScript中，json是以对象形式存在的。
+
+        3、在JavaScript中，how定义JSON格式的对象，怎么访问对象属性？
+             语法格式：
+                 var jsonObj = {
+                     "属性名"：属性值，
+                     "属性名"：属性值，
+                     "属性名"：属性值，
+                     "属性名"：属性值，
+                     "属性名"：属性值，
+                     "属性名"：属性值，
+                     ...
+
+                     属性值可以是任意类型
+                     Json是无类型对象，直接打括号抱起来就是Json对象。
+                }
+        
+        4、NOTICE! js中的 [] 和 {} 有什么区别：
+            []是数组对象
+            {}是json对象         
+         */ 
+         
+
+         var emp = {
+            "empno": 7369,
+            "ename": "Kyosuke",
+            "sal": 800
+         }
+
+         //第一种方式————点 punkt
+         console.log(emp.empno)
+         console.log(emp.ename)
+         console.log(emp.sal)
+
+         //第二种方式————中括号
+         console.log(emp["empno"])
+         console.log(emp["ename"])
+         console.log(emp["sal"])
+         
+
+         var person = {
+            "name" : "Kyosuke",
+            "gender" : false,
+            "hobby" : ["smoke", "drink", "music"]
+         }
+
+         console.log(person.name)
+         console.log(person.gender ? "female":"male" )
+         var hobby = person.hobby;
+         for(var i = 0; i < person.hobby.length; i++){
+            console.log(hobby[i])
+         }
+        </script>
+    </body>
+</html>  
